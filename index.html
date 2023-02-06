@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warna</title>
+</head>
+<body>
+  <div id="tengah">
+    <button id="btn">acak warna</button><br>
+    <div id="inline">
+      <div id="kiri">
+        <div class="kotak merah"></div>
+        <input id="rangeMerah" type="range" min="1" max="255">
+      </div>
+      <div id="kanan">
+        <div class="kotak biru"></div>
+        <input id="rangeBiru" type="range" min="1" max="255">
+      </div>
+    </div>
+  </div>
+
+<!--css-->
+<style>
+  html, body{
+    height: 100%;
+    width: 100%;
+  }
+  #tengah{
+    text-align: center;
+    margin: 200px auto;
+  }
+  #inline{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .kotak{
+    width: 20px;
+    height: 20px;
+    margin: 20px auto;
+    margin-bottom: 7px;
+  }
+  #kiri{
+    margin-right: 10px
+  }
+  #kiri{
+    margin-left: 10px
+  }
+  .merah{
+    background: red;
+  }
+  .biru{
+    background: blue;
+  }
+
+
+</style>
+
+<!--script-->
+<script>
+  const button = document.querySelector("#btn");
+  const rangeMerah = document.querySelector("#rangeMerah");
+  const rangeBiru = document.querySelector("#rangeBiru");
+  
+
+  button.addEventListener("click", function(){
+    const m = Math.round(Math.random() *255 + 1);
+    const h = Math.round(Math.random() *255 + 1);
+    const b = Math.round(Math.random() *255 + 1);
+    
+    document.body.style.background = "rgb("+ m +","+ h +", "+ b +")"
+  })
+
+  rangeMerah.addEventListener("input", function(){
+    const merah = rangeMerah.value;
+
+    document.body.style.background = "rgb("+ merah +", 0, 0)";
+  })
+  
+  rangeBiru.addEventListener("input", function(){
+    const biru = rangeBiru.value;
+
+    document.body.style.background = "rgb(0,0, "+ biru +")";
+  })
+
+  document.body.addEventListener("mousemove", function(event){
+    const lebar = Math.ceil((event.clientX / window.innerWidth) *255)
+    const tinggi = Math.ceil((event.clientY / window.innerHeight) *255)
+    
+
+    document.body.style.background = "rgb("+ lebar +","+ tinggi +", 0)";
+  })
+
+</script>
+
+
+
+</body>
+</html>

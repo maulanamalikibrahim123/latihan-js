@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing</title>
+</head>
+<body>
+    <div class="div0">
+        
+            <div class="div1">
+                <img src="img/batu.jpg" height="39" id="img" width="39" alt="batu">
+                <div>
+                <span class="sp1">Ini adalah tangan</span>
+                <span class="sp1">082349894859  1</span>
+                <div class="round"  >
+                    <a href="" class="sp2">X</a>
+                </div>
+                </div>
+            </div>
+            <div class="div1">
+                <img src="img/batu.jpg" height="39" id="img" width="39" alt="batu">
+                <div>
+                <span class="sp1">Ini adalah tangan</span>
+                <span class="sp1">082349894859   2</span>
+                <div class="round"  >
+                    <a href="" class="sp2">X</a>
+                </div>
+                </div>
+            </div>
+        
+            <div class="div1">
+                <img src="img/batu.jpg" height="39" id="img" width="39" alt="batu">
+                <div>
+                <span class="sp1">Ini adalah tangan</span>
+                <span class="sp1">082349894859   3</span>
+                <div class="round"  >
+                    <a href="" class="sp2">X</a>
+                </div>
+                </div>
+            </div>
+            <div class="div1">
+                <img src="img/batu.jpg" height="39" id="img" width="39" alt="batu">
+                <div>
+                <span class="sp1">Ini adalah tangan</span>
+                <span class="sp1">082349894859   4</span>
+                <div class="round"  >
+                    <a href="" class="sp2">X</a>
+                </div>
+                </div>
+            </div> 
+        
+    </div>
+    
+    <style>
+        body{
+            height: 100%;
+            width: 100%;
+            background: rgb(54, 54, 54);
+        }
+        .div0{
+            display: flex;
+            flex-direction: column;
+        }
+        .div1{
+            height: 40px;
+            width: 250px;
+            margin-top: 15px;
+            background: grey;
+            border-radius: 20px 20px 20px 20px;
+            position: relative;
+        }
+        #img{
+            border-radius: 50%;
+            position: absolute;
+        }
+        .sp1{
+            display: flex;
+            justify-content: center;
+;
+        }
+        .sp2{
+            display: flex;
+            justify-content: center;
+            transform: translateY(5px);
+            color: red;
+            text-decoration: none;
+            
+            }
+        .round{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            margin-top: -32px;
+            margin-left: 210px;
+        }
+    </style>
+
+    <script>
+/*
+        const round = document.querySelectorAll(".div1") 
+        const klik = document.querySelectorAll(".sp2")
+        
+        klik.forEach(function(mo){
+        mo.addEventListener("click", function(e){
+            e.target.parentElement.parentElement.parentElement.style.display= "none";
+            e.preventDefault();
+            e.stopPropagation()
+        })
+        })
+
+    round.forEach(function(cards){
+        cards.addEventListener("click", function(m){
+            alert("woyyy bisa boyy")
+        })
+    })
+
+*/
+
+const container = document.querySelector(".div0");
+container.addEventListener("click", function(mol){
+    if(mol.target.className = ".sp2") 
+    mol.target.parentElement.parentElement.parentElement.style.display = "none";
+    mol.preventDefault();
+})
+
+    </script>
+
+</body>
+</html>

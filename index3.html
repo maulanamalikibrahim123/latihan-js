@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALERI</title>
+</head>
+<body>
+    <div class="container">
+        <img class="big" src="img/a1.png" alt="gambar">
+        <div class="container2">
+            <img class="small" src="img/a1.png" alt="gambar">
+            <img class="small" src="img/a2.jpg" alt="gambar">
+            <img class="small" src="img/a3.png" alt="">
+            <img class="small" src="img/a4.png" alt="gambar">
+            <img class="small" src="img/a5.jpg" alt="gambar">
+            <img class="small" src="img/a6.jpg" alt="gambar">
+        </div>
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+            transform: translatex(450px);
+            margin-top: 10px;
+            padding: 5px 10px 5px 10px;
+            flex-direction: column;
+            width: 520px;
+            height: auto;
+            overflow: auto;
+            background: grey;
+        }
+        .container2{
+            float: left;
+        }
+        .big{
+            width: 520px;
+            height: 520px;
+            margin-bottom: 5px;
+        }
+        .active{
+            opacity: 0.5;
+        }
+        .small{
+            width: 170px;
+            height: 170px;
+        }
+        @keyframes kedip{
+            to {
+                opacity: 1;
+            }
+        }
+        .kedip {
+            opacity: 0;
+            animation: kedip 0.5s forwards;
+        }
+
+
+    </style>
+    <script>
+
+        const big = document.querySelector(".big")
+        const container = document.querySelector(".container");
+        const small = document.querySelector(".small");
+ 
+        
+        container.addEventListener("click", function(klik){
+            //apa dulu yg mo di klik niii
+            if(klik.target.className = "small"){
+                big.src = klik.target.src;
+
+                
+                big.classList.add("kedip")
+
+                setTimeout(function(){
+                    big.classList.remove("kedip")
+                    
+                }, 500);
+
+                
+            }
+        }) 
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

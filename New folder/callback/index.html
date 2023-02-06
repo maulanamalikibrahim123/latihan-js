@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root">
+        <b>haiii</b>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        //callback
+
+        //function halo(nama){
+        //    alert(`halo, ${nama}`)
+        //}
+
+        //function tampilkanPesan(callback){
+        //    const nama = prompt('Masukin Namalu : ');
+         //   callback(nama);
+        //}
+
+        //tampilkanPesan(halo)
+
+        
+            //console.log("Mulai");
+            //mhs.forEach(m => {
+             //   for (let i = 0; i < 1000000; i++){
+             //       let date = new Date();
+            //    }
+            //    console.log(m.nama)
+            //});
+            //console.log("Selesai");
+            
+
+            //ambil api menggunakan jquery
+        /*    console.log("mulai");
+            $.ajax({
+                url: "mahasiswa.json",
+                success: (mhs) =>{
+                    mhs.forEach(m => {
+                        console.log(m.idDosen)
+                    })
+                },
+                error: () =>{
+                    console.log("gagal boy")
+                }
+            })
+            
+          */  
+           
+
+        /*    const coba = new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("selesai")
+                }, 2000)
+            });
+            coba.then(() =>  console.log(coba))
+        */
+            
+        function cobaPromise(){
+            return new Promise((resolve, reject) => {
+                const waktu =  4000;
+                if (waktu < 4000){
+                    setTimeout(() => {
+                        resolve("tepat waktu")
+                    }, 2000)
+                }else {
+                    setTimeout(()=> {
+                        reject("kelamaan looo")
+                    }, 1000)
+                }
+            }) 
+        };
+
+        /* const coba = cobaPromise();
+        coba
+            .then((coba) => console.log(coba))
+            .catch((coba) => console.log(coba));
+        */
+
+        async function cobaAsync(){
+            try {
+            const coba = await cobaPromise();
+            console.log(coba);
+            } catch(err) {
+                console.log(err)
+            }
+        }
+
+        cobaAsync()
+        /*async function tes(){
+            const coba = await cobaPromise();
+            console.log(coba);
+        }*/
+        
+
+        //tes()
+    </script>
+
+</body>
+</html>
